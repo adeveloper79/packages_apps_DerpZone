@@ -225,5 +225,12 @@
     <string name="clock_date_format">Date format</string>
     <string name="clock_date_string_edittext_title">Must be in DateFormat eg. MM/dd/yy</string>
     <string name="clock_date_string_edittext_summary">Enter string</string>
+
+    <!-- Screen Off animation --> 
+    <string name="screen_off_animation_title">Screen off animation</string> 
+    <string name="screen_off_animation_fade">Simple fade</string> 
+    <string name="screen_off_animation_color">Color fade</string> 
+    <string name="screen_off_animation_crt">CRT</string> 
+    <string name="screen_off_animation_scale">Scale</string> 
     
 </resources>
