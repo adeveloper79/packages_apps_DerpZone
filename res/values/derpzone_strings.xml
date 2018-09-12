@@ -29,6 +29,8 @@
     <string name="notifications_title">Notifications</string>
     <string name="decorroom_title">Decor Room</string>
     <string name="decorroom_summary">misc decorations</string>
+    <string name="animation_settings_title">Animations</string>
+    <string name="animation_settings_summary">System Wide Animation Options</string>
 
     <!-- General strings -->
     <string name="ok">OK</string>
@@ -260,5 +262,12 @@
     <!-- Hide Lockscreen shortcuts on secure Lockscreen -->
     <string name="lockscreen_hide_shortcuts_title">Hide Bottom Shortcuts</string>
     <string name="lockscreen_hide_shortcuts_summary">Hide Left-Right Shortcuts on secure lock screens</string>
+
+    <!-- Screen off animation -->
+    <string name="screen_off_animation_fade">Simple fade</string>
+    <string name="screen_off_animation_color">Color fade</string>
+    <string name="screen_off_animation_crt">CRT</string>
+    <string name="screen_off_animation_scale">Scale</string>
+    <string name="screen_off_animation_title">Screen off animation</string>
     
 </resources>
