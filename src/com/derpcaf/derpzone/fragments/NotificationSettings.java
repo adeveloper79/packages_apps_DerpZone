@@ -1,5 +1,7 @@
 package com.derpcaf.derpzone.fragments;
-
+import android.content.BroadcastReceiver;
+import android.content.Intent;
+import android.content.IntentFilter;
 import com.android.internal.logging.nano.MetricsProto;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.ListPreference;
@@ -15,6 +17,7 @@ import android.os.Bundle;
 import com.android.settings.R;
 
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.display.FontPickerPreferenceController;
 
 public class NotificationSettings extends SettingsPreferenceFragment 
                          implements OnPreferenceChangeListener {
@@ -55,6 +58,37 @@ public class NotificationSettings extends SettingsPreferenceFragment
         if (!DerpcafUtils.deviceSupportsFlashLight(getActivity())) {
             prefScreen.removePreference(FlashOnCall);
         }
+    }
+
+      	private IntentFilter mIntentFilter;
+    private static FontPickerPreferenceController mFontPickerPreference;
+    private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if (action.equals("com.android.server.ACTION_FONT_CHANGED")) {
+                mFontPickerPreference.stopProgress();
+            }
+        }
+    };
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mIntentFilter = new IntentFilter();
+        mIntentFilter.addAction("com.android.server.ACTION_FONT_CHANGED");
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        final Context context = getActivity();
+        context.registerReceiver(mIntentReceiver, mIntentFilter);
+    }
+    @Override
+    public void onPause() {
+        super.onPause();
+        final Context context = getActivity();
+        context.unregisterReceiver(mIntentReceiver);
+        mFontPickerPreference.stopProgress();
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
