@@ -198,6 +198,19 @@
             android:summary="@string/lockscreen_visualizer_enable_summary"
             android:defaultValue="false" />
 
+	<com.derpcaf.derpzone.preferences.SecureSettingSwitchPreference
+	    android:key="sysui_keyguard_show_battery_bar"
+            android:title="@string/tuner_keyguard_show_battery_bar_title"
+            android:summary="@string/tuner_keyguard_show_battery_bar_summary"
+            android:defaultValue="true" />
+
+	<com.derpcaf.derpzone.preferences.SecureSettingSwitchPreference
+	    android:key="sysui_keyguard_show_battery_bar_always"
+            android:title="@string/tuner_keyguard_show_battery_bar_always_title"
+            android:summary="@string/tuner_keyguard_show_battery_bar_always_summary"
+            android:dependency="sysui_keyguard_show_battery_bar"
+            android:defaultValue="false" />
+
         <com.derpcaf.derpzone.preferences.SystemSettingListPreference
             android:key="lockscreen_album_art_filter"
             android:title="@string/lockscreen_cover_filter_title"
