@@ -1267,4 +1267,11 @@
     <string name="tuner_keyguard_show_battery_bar_always_title">Always show battery bar</string>
     <string name="tuner_keyguard_show_battery_bar_always_summary">Always show battery bar on charging</string>
 
+    <!-- Rounded corners -->
+    <string name="corners_category">Corners</string>
+    <string name="corner_radius">Rounded corner radius</string>
+    <string name="content_padding">Corner content padding</string>
+    <string name="corner_fwvals">Use framework values</string>
+    <string name="corner_fwvals_summary">Useful if the device actually has rounded corners</string>
+
 </resources>
